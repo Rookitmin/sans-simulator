@@ -3,9 +3,13 @@ function BattleScene() {
 	SceneContext.call(this);
 
 	// a single heart for the battle scene.
-	this.heart_sprite = this.addSprite("img/blueheart.png");
+	this.heart_sprite = this.addSprite("img/heart.png");
 	this.heart_sprite.scale.set(16, 16, 1);
 	this.heart_sprite.position.set(160, 228, 2);
+
+	this.heart_spriteb = this.addSprite("img/heartblue.png");
+	this.heart_spriteb.scale.set(16, 16, 1);
+	this.heart_spriteb.position.set(160, 228, 2);
 
 	this.heart = heart;
 	this.heart.sprite = this.heart_sprite;
@@ -50,6 +54,7 @@ BattleScene.prototype.update = function(delta) {
 		}
 
 		if (collided == true) {
+			
 			document.getElementById("se_damage").currentTime = 0;
 			document.getElementById("se_damage").play();
 			if (this.difficulty == "easy") {
@@ -78,7 +83,9 @@ BattleScene.prototype.update = function(delta) {
 		this.elapsed_time += delta;
 
 		this.heart.updateGameover(this.elapsed_time);
-
+		
+		this.heart.sprite = this.heart_spriteb;
+		
 		if (this.final_message == false){
 			this.final_message = true;
 			document.getElementById("bgm1").pause();
@@ -88,7 +95,7 @@ BattleScene.prototype.update = function(delta) {
 		if (this.elapsed_time >= 1.0) {
 			this.elapsed_time = 0;
 			this.play_state = "not-playing";
-			document.getElementById("select_text").innerHTML = "Select a difficulty.";
+			document.getElementById("select_text").innerHTML = "Play again?";
 		}
 
 	}
@@ -124,17 +131,17 @@ BattleScene.prototype.resetGame = function(diff_level) {
 		case "easy":
 			heart.tolerance = 0;
 			this.play_speed = 1;
-			document.getElementById("love").innerHTML = "0";
+			document.getElementById("love").innerHTML = "1";
 			break;
 		case "medium":
 			heart.tolerance = 2;
 			this.play_speed = 1;
-			document.getElementById("love").innerHTML = "0";
+			document.getElementById("love").innerHTML = "10";
 			break;
 		case "hard":
 			heart.tolerance = 2;
 			this.play_speed = 1.5;
-			document.getElementById("love").innerHTML = "0";
+			document.getElementById("love").innerHTML = "99";
 			break;
 	}
 	document.getElementById("select_difficulty").className = "closed";
@@ -142,4 +149,5 @@ BattleScene.prototype.resetGame = function(diff_level) {
 	document.getElementById("bgm1").currentTime = 0;
 	document.getElementById("bgm1").play();
 	document.activeElement.blur();
+	
 }
