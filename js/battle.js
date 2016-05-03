@@ -129,17 +129,17 @@ BattleScene.prototype.resetGame = function(diff_level) {
 		case "easy":
 			heart.tolerance = 0;
 			this.play_speed = 1;
-			document.getElementById("love").innerHTML = "1";
+			document.getElementById("love").innerHTML = "0";
 			break;
 		case "medium":
 			heart.tolerance = 2;
 			this.play_speed = 1;
-			document.getElementById("love").innerHTML = "10";
+			document.getElementById("love").innerHTML = "0";
 			break;
 		case "hard":
 			heart.tolerance = 2;
-			this.play_speed = 1.5;
-			document.getElementById("love").innerHTML = "99";
+			this.play_speed = 1.3;
+			document.getElementById("love").innerHTML = "0";
 			break;
 	}
 	document.getElementById("select_difficulty").className = "closed";
