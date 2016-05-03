@@ -83,9 +83,7 @@ BattleScene.prototype.update = function(delta) {
 		this.elapsed_time += delta;
 
 		this.heart.updateGameover(this.elapsed_time);
-		
-		this.heart.sprite = this.heart_spriteb;
-		
+				
 		if (this.final_message == false){
 			this.final_message = true;
 			document.getElementById("bgm1").pause();
