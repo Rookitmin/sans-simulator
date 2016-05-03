@@ -76,7 +76,7 @@ var bone_set_1L = { // wave from the left
 };
 
 var bone_set_2R = { // LINES OF VERTICAL BONES
-	next_time: 6,
+	next_time: 5,
 	total_time: 8,
 	bones: [
 		[340, 168, 16, 500, -100,"red"],
@@ -92,7 +92,7 @@ var bone_set_2R = { // LINES OF VERTICAL BONES
 };
 
 var bone_set_2L = { // LINES OF VERTICAL BONES
-	next_time: 6,
+	next_time: 5,
 	total_time: 8,
 	bones: [
 		[-20, 40, 16, 500, 100,"red"],
