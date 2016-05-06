@@ -64,6 +64,18 @@ color: #FF0000;
 	font-family: "DeterminationMono";
 	font-size: 18px;
 }
+.mute{
+	font-family: "DeterminationMono";
+	font-size: 19px;
+	position: absolute;
+	text-align: right;
+	line-height: 15px;
+	bottom: 0;
+	left: calc(100% - 180px);
+	padding: 8px 0;
+	overflow: hidden;
+	transition: all 0.3s ease;
+}
 	</style>
 </head>
 
@@ -127,12 +139,14 @@ color: #FF0000;
 
 		window.onload = start;
 	</script>
+	</div>
+				<div class="mute"><a href="#" onclick="document.getElementById('bgm1').muted = true;document.getElementById('gameover').muted = true;document.getElementById('se_sans').muted = true;document.getElementById('se_damage').muted = true; return false">Mute All Sounds</a></div>
 
 	<div class="bottom-credits">
 		<p>
 			<div class="redtext">
 			<span>Sans Simulator V0.2.6</span>
-			<span>This version of Endless Sans was created by GMR for fun.</span>
+			<br>
 			<br>
 			<p><strong>LATEST CHANGES</strong></p>
 			<li>Changed heart to blue</li>
