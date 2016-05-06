@@ -87,6 +87,8 @@ BattleScene.prototype.update = function(delta) {
 		if (this.final_message == false){
 			this.final_message = true;
 			document.getElementById("bgm1").pause();
+			document.getElementById("gameover").currentTime = 0;
+			document.getElementById("gameover").play();
 			sans.sendGameOverMessage();
 		}
 
