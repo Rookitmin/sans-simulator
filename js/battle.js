@@ -148,6 +148,7 @@ BattleScene.prototype.resetGame = function(diff_level) {
 	document.getElementById("gameplay_area").className = "";
 	document.getElementById("bgm1").currentTime = 0;
 	document.getElementById("bgm1").play();
+	document.getElementById("gameover").pause();
 	document.activeElement.blur();
 	
 }
